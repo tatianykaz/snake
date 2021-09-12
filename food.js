@@ -26,5 +26,6 @@ function getRandomFoodPosition() {
   while (newFoodPosition == null || onSnake(newFoodPosition)) {
     newFoodPosition = randomGridPosition()
   }
+  
   return newFoodPosition
 }
