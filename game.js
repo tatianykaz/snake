@@ -5,6 +5,7 @@ import { update as updateSpeed, speed} from './speed.js'
 let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById('game-board')
+let segmentsAmount = document.getElementById('segments_amount');
 
 function main(currentTime) {
   if (gameOver) {

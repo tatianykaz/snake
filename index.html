@@ -18,8 +18,8 @@
         
         #game-board {
             background-color: rgb(61, 161, 15);
-            width: 100vmin;
-            height: 100vmin;
+            width: 80vmin;
+            height: 80vmin;
             display: grid;
             grid-template-rows: repeat(21, 1fr);
             grid-template-columns: repeat(21, 1fr);
@@ -30,10 +30,32 @@
             border: .25vmin solid black;
         }
 
+        .panel {
+            display: block;
+            width: 80vmin;
+            height: 10vmin;
+            background-color: rgb(184, 8, 8);
+            border: .25vmin solid black;
+        }
+
+        #segments_amount {
+            color: white;
+            align-content: center;
+            font-weight: bold;
+            text-align: center;
+            font-size: 18px;
+        }
+
+
     </style>
     <script src="game.js" defer type="module"></script>
 </head>
 <body>
-    <div id="game-board"></div>
+    <div>
+        <div class="panel">
+            <p id="segments_amount"></p>
+        </div>
+        <div id="game-board"></div>
+    </div>
 </body>
 </html>
