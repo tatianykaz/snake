@@ -13,6 +13,11 @@ export function update() {
 
 export function draw(gameBoard) {
   const foodElement = document.createElement('div')
+  var rat = document.createElement("img");
+  rat.setAttribute("src", "images/rat_icon2.png");
+  rat.setAttribute("height", "100%");
+  rat.setAttribute("width", "100%");
+  foodElement.appendChild(rat)
   foodElement.style.gridRowStart = food.y
   foodElement.style.gridColumnStart = food.x
   foodElement.classList.add('food')
