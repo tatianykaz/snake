@@ -13,11 +13,11 @@
             justify-content: center;
             align-items: center;
             margin: 0;
-            background-color: black;
+            background-color: #000;
         }
         
         #game-board {
-            background-color: rgb(61, 161, 15);
+            background-color: #3DA10F;
             width: 80vmin;
             height: 80vmin;
             display: grid;
@@ -27,15 +27,15 @@
 
         .snake {
             background-color: #850D83;
-            border: .25vmin solid black;
+            border: .25vmin solid #000;
         }
 
         .panel {
             display: block;
             width: 80vmin;
             height: 10vmin;
-            background-color: rgb(184, 8, 8);
-            border: .25vmin solid black;
+            background-color: #B80808;
+            border: .25vmin solid #000;
         }
 
         #segments_amount {
@@ -54,6 +54,8 @@
     <div>
         <div class="panel">
             <p id="segments_amount"></p>
+            <button id="pause" style="width: 50px; height: 50px;">
+        </button>
         </div>
         <div id="game-board"></div>
     </div>

@@ -5,7 +5,7 @@ import { update as updateSpeed, speed} from './speed.js'
 let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById('game-board')
-let segmentsAmount = document.getElementById('segments_amount');
+let pauseValue = false
 
 function main(currentTime) {
   if (gameOver) {
@@ -14,15 +14,17 @@ function main(currentTime) {
     }
     return
   }
-
   window.requestAnimationFrame(main)
-  const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
-  if (secondsSinceLastRender < 1 / speed) return
 
-  lastRenderTime = currentTime
+  if (pauseValue === false){
+    const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
+    if (secondsSinceLastRender < 1 / speed) return
 
-  update()
-  draw()
+    lastRenderTime = currentTime
+
+    update()
+    draw()
+  }
 }
 
 window.requestAnimationFrame(main)
@@ -43,3 +45,8 @@ function draw() {
 function checkDeath() {
   gameOver = snakeIntersection()
 }
+
+document.getElementById("pause")
+  .addEventListener("click", function(){
+    pauseValue = !pauseValue 
+  }, false);
